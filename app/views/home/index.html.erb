@@ -1,16 +1,22 @@
+<body>
+<div id="abcd">
+<div id="title">
+	Welcome to Word Dict
+</div>
 <form id="query_form">
-	Enter Query String: <input type="text" name="query_string" required> <br>
-	Enter String Length (optional) :<input type="integer" name="query_length"> <br>
-	<select name="query_method">
-		<option value="" selected disabled> Please Select Query Method</option>
+	Enter Query String: <input style="margin-left: 78px;"type="text" name="query_string" required> <br><br>
+	Enter String Length (optional): <input type="number" name="query_length"> <br><br><br>
+	<select  style="margin-left: 6%;" name="query_method">
+		<option value="" selected disabled> Please Select Query Method</option><br>
 	  <option value="lte">Less Than or Equal To</option>
 	  <option value="e">Equal To</option>
 	  <option value="lt">Less Than</option>
-	</select> <br>	
-	<input type="submit">
+	</select> 	
+	<input style ="margin-left: 3%" type="submit">
 </form>
-
+<br><br>
 <div id="results"></div>
+</body>
 
 <script>
 	var d;
@@ -31,7 +37,13 @@
             while (element.firstChild) {
 						    element.removeChild(element.firstChild);
 						}
+			var div=document.createElement("div")
+			div.innerHTML="Query Results are:"
+
             var ul = document.createElement("ul")
+            div.classList.add("ab");
+            ul.classList.add("cd");
+            results.appendChild(div);
             var words = data.data;
             for(i=0;i<words.length;i++)
             {
@@ -48,3 +60,4 @@
 		});
 	})
 </script>
+</div>
